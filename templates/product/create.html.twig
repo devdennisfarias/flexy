@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cadastro de Produtos
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<h1 class="mt-4 mb-4 text-center">Cadastro de Produto</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb float-right">
+					<li class="breadcrumb-item">
+						<a href="{{ path('welcome') }}">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a href="{{ path('product_index') }}">Produtos</a>
+					</li>
+					<li class="breadcrumb-item active">
+						<a href="#">Cadastrar</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="example-wrapper">
+			{{ form_start(form) }}
+
+			{{ form_widget(form ) }}
+
+			<button type="submit" class="btn btn-lg btn-primary float-right">Cadastrar</button>
+			<a href="{{ path('product_index') }}" class="btn btn-lg btn-danger float-right mr-2">Cancelar</a>
+
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

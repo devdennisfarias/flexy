@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="{{ path('welcome') }}">Home</a>
+		</li>
+		<li class="breadcrumb-item">
+			<a href="{{ path('tag_index') }}">Tags</a>
+		</li>
+		<li class="breadcrumb-item">
+			<a href="{{ path('tag_create') }}">Criar</a>
+		</li>
+	</ol>
+
+	{{ form_start(form, {attr: {novalidate: "novalidate"}}) }}
+	{{ form_widget(form) }}
+
+	<button type="submit" class="btn btn-lg btn-primary float-right">Cadastrar</button>
+	<a href="{{ path('tag_index') }}" class="btn btn-lg btn-danger float-right mr-2">Cancelar</a>
+
+	{{ form_end(form) }}
+{% endblock %}
+
+{% block title %}
+	Criação de Tags
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<div>
+		<ol class="breadcrumb float-right">
+			<li class="breadcrumb-item">
+				<a href="{{ path('welcome') }}">Home</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="{{ path('tag_index') }}">Tags</a>
+			</li>
+			<li class="breadcrumb-item active">
+				<a href="#">Editar</a>
+			</li>
+		</ol>
+	</div>
+
+	{{ form_start(form) }}
+
+	{{ form_widget(form) }}
+
+	<button type="submit" class="btn btn-lg btn-primary float-right">Atualizar</button>
+	<a href="{{ path('tag_index') }}" class="btn btn-lg btn-danger float-right mr-2">Cancelar</a>
+
+	{{ form_end(form) }}
+{% endblock %}
+
+{% block title %}
+	Edição de Tag
+{% endblock %}
