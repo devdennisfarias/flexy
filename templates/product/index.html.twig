@@ -27,7 +27,6 @@
 					<th>Preço</th>
 					<th>Descrição</th>
 					<th>Estoque</th>
-					<th>Tags</th>
 					<th>Ações</th>
 				</tr>
 			</thead>
@@ -50,9 +49,7 @@
 						<td>
 							{{ product.stock }}
 						</td>
-						<td>
-							{{ product.tagCollection.name }}
-						</td>
+
 						<td>
 							<a href="{{ path('product_edit', {'id':product.id}) }}" class="btn btn-sm btn-primary">Editar</a>
 							<a href="{{ path('product_remove', {'id':product.id}) }}" class="btn btn-sm btn-danger">Remover</a>

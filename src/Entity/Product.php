@@ -44,12 +44,8 @@ class Product
     private $stock;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $tags;
-
-    /**
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="productCollection")
+     * @ORM\JoinColumn()
      */
     private $tagCollection;
 
@@ -119,18 +115,6 @@ class Product
     public function setStock(string $stock): self
     {
         $this->stock = $stock;
-
-        return $this;
-    }
-
-    public function getTags(): ?string
-    {
-        return $this->tags;
-    }
-
-    public function setTags(string $tags): self
-    {
-        $this->tags = $tags;
 
         return $this;
     }
